@@ -31,8 +31,7 @@ export default  {
 
 	},
 	format: {
-		mainline: true,
-		sidebar: true
+		fullscreen: true
 		// "sidebar" / "mainline" / "ribbon" / "fullscreen"
 	},
 	permissions: {

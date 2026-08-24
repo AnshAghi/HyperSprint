@@ -4,6 +4,7 @@ import react from '@vitejs/plugin-react';
 import { visualizer } from 'rollup-plugin-visualizer';
 import pkg from './package.json';
 import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js';
+import tailwindcss from '@tailwindcss/vite';
 import hdConfig from './hyperdart.config';
 import hDBackend from '@hyperdart/backend';
 
@@ -48,6 +49,7 @@ export default defineConfig(({ command }) => {
       react({
         jsxRuntime: 'automatic',
       }),
+      tailwindcss(),
       createDartFramePlugin(hdConfig, pkg),
       cssInjectedByJsPlugin(),
       visualizer(),

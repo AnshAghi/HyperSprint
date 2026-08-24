@@ -1,5 +1,6 @@
 [
-  // "CREATE TABLE IF NOT EXISTS users (id INTEGER PRIMARY KEY, name TEXT NOT NULL, email TEXT UNIQUE);",
-  // "CREATE TABLE IF NOT EXISTS orders (id INTEGER PRIMARY KEY, user_id INTEGER, total REAL, created_at INTEGER, FOREIGN KEY (user_id) REFERENCES users(id));"
+  "CREATE TABLE IF NOT EXISTS postal_codes (country_code TEXT NOT NULL, postal_code TEXT NOT NULL, place_name TEXT NOT NULL, admin1_name TEXT, admin1_code TEXT, admin2_name TEXT, admin2_code TEXT, admin3_name TEXT, admin3_code TEXT, latitude REAL, longitude REAL, accuracy INTEGER);",
+  "CREATE INDEX IF NOT EXISTS idx_postal_codes_code ON postal_codes(country_code, postal_code);",
+  "CREATE INDEX IF NOT EXISTS idx_postal_codes_city ON postal_codes(country_code, place_name, admin1_code);"
 ]
 
