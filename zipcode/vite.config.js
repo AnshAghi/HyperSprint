@@ -9,33 +9,8 @@ import hdConfig from './hyperdart.config';
 import hDBackend from '@hyperdart/backend';
 
 function createDartFramePlugin(hdConfig, pkg) {
-  const baseURL = hdConfig?.client?.baseURL || "/";
-  const updatedConfig = {
-    ...hdConfig,
-    client: {
-      ...hdConfig.client,
-      location: '/' + pkg.source,
-    },
-  };
-
   return {
     name: 'vite-plugin-dart-frame',
-    configureServer(server) {
-      server.middlewares.use(baseURL, async (req, res, next) => {
-        try {
-          const rawHtml = await hDBackend.createDartFrame(updatedConfig, null);
-          const html = await server.transformIndexHtml(req.originalUrl, rawHtml);
-          res.statusCode = 200;
-          res.setHeader("Content-Type", "text/html");
-          res.end(html);
-        } catch (e) {
-          server.ssrFixStacktrace(e);
-          next(e);
-        }
-      });
-
-
-    },
   };
 }
 

@@ -26,12 +26,12 @@ export default  {
 		// name of the UMD module
 		moduleName: pkg.umdName || 'HD' + pkg.name,
 		// baseURL is only used in local testing and ignored after publish
-		// Optional: defaults to '/name' (the name of the component)
-		baseURL: '/' + pkg.name,
+		// Keep local review rooted at / so the component renders on localhost:5173.
+		baseURL: '/',
 
 	},
 	format: {
-		fullscreen: true
+		sidebar: true
 		// "sidebar" / "mainline" / "ribbon" / "fullscreen"
 	},
 	permissions: {

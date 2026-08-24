@@ -1,5 +1,5 @@
 {
-  "name": "zipcode",
+  "name": "@ansh1825/zipcode",
   "version": "1.0.0",
   "source": "src/frontend/index.tsx",
   "main": "dist/index.umd.js",

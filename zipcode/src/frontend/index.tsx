@@ -1,5 +1,5 @@
 import { withHD } from '@hyperdart/frontend'
-import GeoResolve from './GeoResolve'
+import NewComponent from './NewComponent'
 import '../sandbox/index.css'
 
-export default withHD(GeoResolve)
+export default withHD(NewComponent)
